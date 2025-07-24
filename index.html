@@ -5,13 +5,6 @@
   <title>インターバルタイマー</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2196f3">
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
-  }
-</script>
 </head>
 <body>
   <h1>インターバルタイマー</h1>
@@ -22,8 +15,13 @@
   <label>繰り返す回数：<input id="rounds" type="number" value="3" /></label>
   <br><br>
 
-  <button onclick="startTimer()">スタート</button>
-  <button onclick="stopTimer()">ストップ</button>
+  <button onclick="startTimer()">▶ スタート</button>
+  <button onclick="pauseTimer()">⏸ 一時停止</button>
+  <button onclick="stopTimer()">⏹ 終了</button>
+  <br><br>
+
+  <button onclick="enableWakeLock()">📵 スリープ防止ON</button>
+  <p id="wakelock-status">（スリープ防止OFF）</p>
 
   <p id="status">ステータス：待機中</p>
   <p id="countdown">残り：- 秒</p>
