@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>インターバルタイマー</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2196f3">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+</script>
+</head>
+<body>
+  <h1>インターバルタイマー</h1>
+
+  <div id="steps"></div>
+  <button onclick="addStep()">＋ ステップを追加</button>
+  <br><br>
+  <label>繰り返す回数：<input id="rounds" type="number" value="3" /></label>
+  <br><br>
+
+  <button onclick="startTimer()">スタート</button>
+  <button onclick="stopTimer()">ストップ</button>
+
+  <p id="status">ステータス：待機中</p>
+  <p id="countdown">残り：- 秒</p>
+
+  <script src="script.js"></script>
+</body>
+</html>
